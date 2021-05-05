@@ -24,13 +24,6 @@ process.on("SIGINT", async function() {
     
 });
 
-
-
-// async function myFunc() {
-//     const date = new Date();
-//     console.log(date.toISOString());
-// }
-
 async function watcher() {
     if (watcherRunning) return;
     watcherRunning = true;
@@ -55,18 +48,3 @@ async function watcher() {
 }
 
 setInterval(watcher, 1000);
-
-// watcher();
-// watcher();
-// watcher();
-
-// watcher();
-
-
-import { readdirSync } from "fs";
-import { join, parse as parseFileName } from "path";
-
-(async () => {
-    const list = readdirSync(join(__dirname, 'jobs')).map(val => parseFileName(val).name);
-    console.log(list);
-})();
